@@ -1,0 +1,419 @@
+body,
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+#logo,
+#logo2,
+#nav,
+#tabs a,
+#content-tabs a,
+.countdown div {
+    font-family: 'bebas_neueregular';
+    font-weight: normal;
+}
+.slogan {
+    font-size: 110px;
+}
+h1 {
+    font-size: 70px;
+}
+h2 {
+    font-size: 44px;
+}
+h3 {
+    font-size: 36px;
+}
+h4,
+summary {
+    font-size: 30px;
+}
+h5 {
+    font-size: 24px;
+}
+h6 {
+    font-size: 20px;
+}
+p,
+blockquote,
+blockquote cite,
+#top,
+#top2 {
+    font-size: 13px;
+}
+#nav ul li a,
+#nav ul li ul a,
+#filters li {
+    font-size: 16px;
+}
+#left,
+.ns_nerveSlider .ns_loadSpinner div {
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-image: url('http://arc-wp.wp4life.com/wp-content/themes/arc-wp/images/loader.gif') !important;
+}
+#tiles li a.link {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('http://arc-wp.wp4life.com/wp-content/themes/arc-wp/images/link.png') !important;
+}
+.clb-photo {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('http://arc-wp.wp4life.com/wp-content/themes/arc-wp/images/search.png') !important;
+}
+.post-link {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('http://arc-wp.wp4life.com/wp-content/themes/arc-wp/images/link.png') !important;
+}
+body,
+.blackbox,
+table th,
+.clb-photo,
+.page-photo,
+#gallery-left,
+#logo2,
+#left-menu-icon,
+#left-menu-close-icon,
+#top,
+#top2,
+.c-menu-message,
+#nav,
+#tiles li a,
+#filters,
+.post-link,
+.da-thumbs li a div,
+.button:hover,
+#submit:hover,
+input[type="submit"]:hover,
+.error-title,
+#tabs a:hover,
+#tabs #current a,
+#content-tabs a:hover,
+#content-tabs #current a,
+.icon-bg,
+.flex-direction-nav a,
+.widget_search input[type="submit"]:hover,
+.cs-coming,
+#nerve-slider {
+    background-color: #000000;
+}
+#right,
+#gallery-right,
+#tiles li,
+.box,
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+textarea,
+#tab-content,
+#content-tab-content,
+.flex-direction-nav a:hover,
+#fullwidth-right {
+    background-color: #ffffff;
+}
+#nav li.current-menu-item a,
+#nav ul a:hover,
+#filters li.active,
+#filters li:hover,
+input[type="text"][disabled],
+input[type="email"][disabled],
+input[type="number"][disabled],
+input[type="date"][disabled],
+textarea[disabled],
+#content-tabs li,
+#nav li a:hover,
+#tiles li .arccaption {
+    background-color: #c0c0c0;
+}
+#center {
+    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+#logo,
+.vertical-head {
+    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+#nav ul a {
+    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+.label,
+#left-menu-close-icon:hover,
+#top:hover,
+#top2:hover,
+.button,
+input[type="submit"],
+#tabs li,
+#submit,
+.comments a.reply,
+.widget_search input[type="submit"],
+#nav ul li.current-menu-item a {
+    background-color: #555;
+}
+p,
+table td,
+hr,
+.box-list li a:hover,
+q,
+ul.pagination li a,
+h6.date {
+    color: #555;
+}
+.label,
+table th,
+#logo,
+#logo2,
+#top,
+#top2,
+.c-menu-message,
+#nav li a,
+#nav ul li a,
+#nav ul li ul a,
+#nav ul a,
+#nav ul li.current-menu-item a,
+#filters,
+.vertical-head h2,
+.da-thumbs li a div span,
+.error-title,
+#tabs li,
+#tabs a {
+    color: #ffffff;
+}
+.button,
+input[type="submit"],
+#tabs a:hover,
+#tabs #current a,
+#content-tabs a:hover,
+#content-tabs #current a,
+.comments a.reply,
+#nav li a:hover,
+#submit,
+.error-title a,
+#nav ul li.current-menu-item a:hover {
+    color: #ffffff !important;
+}
+a,
+#nav li.current-menu-item a,
+#nav ul a:hover,
+.box-list li a,
+q cite,
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="number"],
+input[type="date"],
+textarea,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+textarea:focus,
+#tab-content ul li a,
+#content-tabs li,
+#content-tabs a,
+.active-header,
+.tweet_list li a,
+#tiles li .arccaption {
+    color: #000000;
+}
+#filters li.active,
+#filters li:hover,
+#nav li a:hover {
+    color: #000000 !important;
+}
+a:hover {
+    color: #c0c0c0;
+}
+table th,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="url"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+    border: solid 1px #000000;
+}
+div.wpcf7-mail-sent-ok,
+div.wpcf7-mail-sent-ng,
+div.wpcf7-spam-blocked,
+div.wpcf7-validation-errors {
+    background-color: #c0c0c0;
+}
+table td,
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="url"],
+textarea,
+#content-tab-content,
+#accordion-container,
+.comment-author img {
+    border: solid 1px #c0c0c0;
+}
+.searchbox input[type="text"].searchtext,
+.tweet_list .tweet_avatar {
+    border: 1px solid #555;
+}
+hr {
+    border: none;
+    border-top: 3px double #555;
+}
+hr:before {
+    border-right: 10px solid transparent;
+}
+hr:before {
+    border-top: 10px solid #555;
+}
+#left:before {
+    border-top: 180px solid #000000;
+}
+#left:after {
+    border-bottom: 100px solid #000000;
+}
+#left-menu-icon:after,
+#left-menu-icon:before {
+    border: solid transparent;
+}
+#left-menu-icon:after {
+    border-width: 20px;
+    border-right-color: #000000;
+}
+#nav,
+#nav li.current-menu-item a {
+    border-bottom-color: #c0c0c0;
+}
+#nav ul li,
+#nav ul li ul,
+.our-team img {
+    border-bottom-color: #000000;
+}
+.da-thumbs li a div span {
+    border-bottom: 1px solid #555;
+    border-top: 1px solid #555;
+}
+#tab-content li img {
+    border: 3px solid #c0c0c0;
+}
+#tab-content li img:hover {
+    border: 3px solid #000000;
+}
+.accordion-header,
+.accordion-content,
+.comment-body {
+    border-bottom: 1px solid #c0c0c0;
+}
+.accordion-header:first-child {
+    border-top: 1px solid #c0c0c0;
+}
+.icon-bg:after,
+.icon-bg:before {
+    border: solid transparent;
+}
+.icon-bg:after {
+    border-color: rgba(0, 0, 0, 0);
+    border-top-color: #000000;
+    border-width: 10px;
+    left: 50%;
+    margin-left: -10px;
+}
+.icon-bg:before {
+    border-color: rgba(0, 0, 0, 0);
+    border-top-color: #000000;
+    border-width: 16px;
+}
+#nav li a {
+    padding: 0px 20px 0px 20px;
+    font-size: 22px;
+}
+@media only screen and (max-width: 1024px) {
+    #nav li a {
+        font-size: 18px;
+    }
+    #nav ul li a,
+    #nav ul li ul a {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 800px) {
+    #center {
+        background-color: #ffffff !important;
+    }
+}
+img.wp-smiley,
+img.emoji {
+    display: inline !important;
+    border: none !important;
+    box-shadow: none !important;
+    height: 1em !important;
+    width: 1em !important;
+    margin: 0 .07em !important;
+    vertical-align: -0.1em !important;
+    background: none !important;
+    padding: 0 !important;
+}
+
+/*
+html body{
+    font-family: 'Impact' !important;
+    font-weight: normal 
+}
+*/
+
+/*
+
+@font-face {
+    font-family: 'bebas_neueregular';
+    src: url('../fonts/bebasneue-webfont.eot');
+    src: url('../fonts/bebasneue-webfont.woff') format('embedded-opentype'),
+         url('../fonts/bebasneue-webfont.woff') format('woff'),
+         url('../fonts/bebasneue-webfont.ttf') format('truetype'),
+         url('../fonts/bebasneue-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+*/
+
+
+@font-face {
+font-family: 'bebas_neueregular';
+font-style: normal;
+font-weight: normal;
+src: local('Bebas Neue'), url('../fonts/BebasNeue.woff') format('woff');
+}
+input[type="text"],input[type="email"],input[type="number"],input[type="date"],textarea {
+		font-size:12px;
+		padding:2px 5px 2px 5px;
+	}
+	input[type="text"],input[type="email"],input[type="number"],input[type="date"],textarea {
+	width:100%;
+	display:block;
+	font-size:14px;
+	margin:0px 0px 11px 0px;
+	padding:5px 10px 5px 10px;
+	height:40px;
+	-webkit-transition:all 0.2s linear;
+	-moz-transition:all 0.2s linear;
+	-o-transition:all 0.2s linear;
+	transition:all 0.2s linear;
+}
+input[type="text"].oversize,input[type="email"].oversize,input[type="number"].oversize,input[type="date"].oversize {
+	font-size:15px;
+	padding:4px 5px
+}
+input[type="text"]:focus,input[type="email"]:focus,input[type="number"]:focus,input[type="date"]:focus,textarea:focus {
+	outline:none !important;
+}
+input[type="submit"] {
+	margin-top:14px;
+}

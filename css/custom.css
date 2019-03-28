@@ -1,0 +1,58 @@
+ .gallery .grids .article-image{
+	 max-width:50%;
+	 float:left;
+	 margin-right:20px;
+	 margin-bottom:20px;
+ }
+ @media only screen and (max-width: 762px) {
+	  .gallery .grids .article-image{
+		 max-width:100%;
+	 }
+}
+p, blockquote, blockquote cite, #top, #top2 {
+	font-size: 16px;
+}
+
+.no-padding{
+	padding:0px!important
+} 
+.no-margin{
+	margin:0px!important
+}
+.error {
+    background-color: #de4343;
+    border-color: #c43d3d;
+    background-color: transparent;
+    color: #cc0000;
+    margin-bottom: 20px;
+    margin-top: -5px;
+    display: block;
+}
+@media only screen and (max-width: 999px) {
+	input[type="color"],
+	input[type="login"],
+	input[type="date"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="email"],
+	input[type="month"],
+	input[type="number"],
+	input[type="submit"],
+	input[type="password"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="text"],
+	input[type="time"],
+	input[type="url"],
+	input[type="week"],
+	select:focus,
+	select,
+	textarea {
+	  font-size: 16px !important;
+	}
+}
+@media only screen and (max-width: 999px) {
+	.wrap {
+		padding: 25px 0px 10px 0px;
+	}
+}
