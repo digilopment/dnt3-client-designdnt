@@ -87,18 +87,18 @@ if($rest->post("sent_msg")){
 		$ATTACHMENT = false;
 	}
 }else{
-	$RESPONSE = 0;
+	$RESPONSE 	= 0;
+	$NO_CAPTCHA = 0;
 }
 
-echo '
-    {
+echo '{
       "success": "'.$RESPONSE.'",
       "request": "POST (via AJAX)",
       "response": "'.$RESPONSE.'",
       "protokol": "REST",
       "n_c": "'.$NO_CAPTCHA.'",
       "generator": "Designdnt 3",
-      "service": "rpc/api/json/ajax-ziadost",
+      "service": "rpc",
       "message": "Silence is golden, speech is gift :)"
     }';
 	
