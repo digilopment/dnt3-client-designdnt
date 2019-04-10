@@ -140,3 +140,25 @@ $getClor = false;
     <iframe class="resp-iframe" src="<?php echo WWW_PATH; ?>embed/video/<?php echo $videoId."?color=".$getClor; ?>" gesture="media"  allow="encrypted-media" allowfullscreen></iframe>
 </div>
 <?php } ?>
+<?php function getSkills(){ ?>
+	 <?php
+		$jazyk_typ = array("HTML, CSS","PHP (OOP)", "MySQL", "Javascript", "Ajax, jQuery", "Bootstap", "Git", "Jira, Bitbucket, Budy, Bamboo", "Ubuntu", "Photoshop");
+		$jazyk_percenta = array("77","92", "81", "75", "82", "86", "95", "63", "83", "71");  
+		$pocet = count($jazyk_typ);
+		for ($i=0;$i<$pocet;$i++){
+		?>
+	 <p class="skilltitle" style="box-sizing: border-box; margin: 0px; text-align: left; color: rgb(46, 46, 46);  font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.100000381469727px; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+		<?php echo $jazyk_typ[$i]; ?>
+		<span class="skilllevel" style="box-sizing: border-box; float: right;">
+		<?php echo $jazyk_percenta[$i]; ?>%
+		</span>
+	 </p>
+	 <div class="barwrapper" style="box-sizing: border-box; width: 100%; position: relative; height: 22px; padding: 1px; margin-bottom: 10px; border: 1px dotted rgba(23, 23, 23, 0.498039); color: rgb(46, 46, 46); font-family: latoRegular, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.100000381469727px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+		<div class="bar" style="box-sizing: border-box; height: 20px; width: 0px; width: 100%;">
+		   <div style="box-sizing: border-box; height: 18px; width:  <?php echo $jazyk_percenta[$i]; ?>%; background: rgb(42, 42, 42);"></div>
+		</div>
+	 </div>
+	 <?php
+		}
+		?>
+<?php } ?>

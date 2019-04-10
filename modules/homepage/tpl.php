@@ -39,6 +39,11 @@
                            }
                            ?>
                      </div>
+					 <div class="grid-12">
+                        <hr/>
+						<h2>Skills</h2>
+						<?php getSkills(); ?>
+                     </div>
                      <!--KONIEC CLASS ICON -->
                      <div class="grid-12">
                         <hr/>
