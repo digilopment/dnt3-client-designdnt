@@ -10,9 +10,16 @@
          <div class="wrapper">
             <div class="wrap">
                <div class="grids">
+			   
                   <div class="grid-12">
                      <h1 class="slogan"><?php echo MultyLanguage::translate($data, "homepage_text", "translate")?> </h1>
                   </div>
+				  
+				  <?php if($data['article']['img']){?>
+				  <div class="grid-12 modul-header-image">
+                     <img class="article-image" src="<?php echo $data['article']['img']?>" alt="<?php echo $data['title']?>" title="<?php echo $data['title']?>">
+                  </div>
+				  <?php } ?>
                   <!-- END grid-12 -->
                   <div>
                      <div class="icons">

@@ -7,10 +7,6 @@ class homepageModulController{
 		$id = $article->getStaticId();
 		$articleName = $article->getPostParam("name",  $id);
 		$articleImage = $article->getPostImage($id);
-		/*//$this->init();
-		var_dump($this->data->rest->get("test"));
-		var_dump($this->data->vendor->getId());
-		*/
 		
 		$custom_data = array(
 			"title" =>  $articleName ." | ".Settings::get("title") ,

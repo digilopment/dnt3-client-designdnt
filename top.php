@@ -6,7 +6,9 @@
 		$logo_firmy = Settings::getImage($data['meta_settings']['keys']['logo_firmy']['value']);
 		$logo_firmy_2 = Settings::getImage($data['meta_settings']['keys']['logo_firmy_2']['value']);
 		$logo_firmy_3 = Settings::getImage($data['meta_settings']['keys']['logo_firmy_3']['value']);
-
+		
+		$logoAlt = "Logo - " . Settings::get("title");
+		
 		$logo_url = $data['meta_settings']['keys']['logo_url']['value'];
 		$logo_url_2 = $data['meta_settings']['keys']['logo_url_2']['value'];
 		$logo_url_3 = $data['meta_settings']['keys']['logo_url_3']['value'];
@@ -14,17 +16,17 @@
 	
 	<?php if ($data['meta_settings']['keys']['logo_firmy']['show'] == 1) { ?>
 		<a target="_blank" href="<?php echo $logo_url ?>">
-			<img class="logo" src="<?php echo $logo_firmy; ?>" alt="Logo">
+			<img class="logo" src="<?php echo $logo_firmy; ?>" alt="<?php echo $logoAlt; ?>">
 		</a>
 	<?php } ?>
 	<?php if ($data['meta_settings']['keys']['logo_firmy_2']['show'] == 1) { ?>
 		<a target="_blank" href="<?php echo $logo_url_2; ?>">
-			<img class="logo" src="<?php echo $logo_firmy_2; ?>" alt="Logo">
+			<img class="logo" src="<?php echo $logo_firmy_2; ?>" alt="<?php echo $logoAlt; ?>">
 		</a>
 	<?php } ?>
 	<?php if ($data['meta_settings']['keys']['logo_firmy_3']['show'] == 1) { ?>
 		<a target="_blank" href="<?php echo $logo_url_3; ?>">
-			<img class="logo" src="<?php echo $logo_firmy_3; ?>" alt="Logo">
+			<img class="logo" src="<?php echo $logo_firmy_3; ?>" alt="<?php echo $logoAlt; ?>">
 		</a>
 	<?php } ?>
  </div>
