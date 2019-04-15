@@ -36,7 +36,7 @@
                   ?>	 
 				<div class="post-<?php echo $item['id_entity']?> post type-post status-publish format-standard has-post-thumbnail hentry category-category1 tag-tag1 tag-tag3"  id="post-<?php echo $item['id_entity']?>">
                   <div class="grid-4">
-                     <a class="post-link"  href="">
+                     <a class="post-link"  href="<?php echo $detailUrl; ?>">
                      <img width="300" height="300" src="<?php echo $image;?>" class="attachment-square-large wp-post-image" alt="" />
                      </a>
                   </div>
