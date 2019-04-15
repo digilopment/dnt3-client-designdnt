@@ -29,6 +29,9 @@ function custom_modules(){
 		"article_view" => array_merge(
 				array(), $webhook->getSitemapModules("article_view")
 		),
+		"video_list" => array_merge(
+				array(), $webhook->getSitemapModules("video_list")
+		),
 		"search" => array_merge(
 				array(), $webhook->getSitemapModules("search")
 		),
@@ -77,6 +80,10 @@ function modulesConfig(){
 		),
 		"article_view" => array(
 			"service_name" => "Detail článku",
+			"sql" => ""
+		),
+		"video_list" => array(
+			"service_name" => "Zoznam videi",
 			"sql" => ""
 		),
 		"search" => array(
