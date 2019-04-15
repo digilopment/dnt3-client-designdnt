@@ -23,7 +23,15 @@ class articleViewModulController{
 				"category_url" 	=> $rest->webhook(1),
 			);
 			
+			$data = Frontend::get($custom_data);
+			include "dnt-view/layouts/".Vendor::getLayout()."/tpl_functions.php";
+			get_top($data);
+			echo '<body class="home page page-id-243 page-template page-template-homepage page-template-homepage-php custom-background">';
+			echo '<div id="main">';
+			include "dnt-view/layouts/".Vendor::getLayout()."/top.php";
 			include "tpl.php";
+			include "dnt-view/layouts/".Vendor::getLayout()."/bottom.php";
+			
 		}else{
 			$rest->loadDefault();
 		}
