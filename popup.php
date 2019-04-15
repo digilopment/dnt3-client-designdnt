@@ -1,12 +1,12 @@
 <!-- WIDGET SECTION  -->
 <section id="center">
    <div id="boxes">
-      <form method="GET" class="searchbox" id="searchform" 
+      <?php /*<form method="GET" class="searchbox" id="searchform" 
          action="hladaj/?">
          <input type="text" class="searchtext field" name="s" placeholder="Výraz, ktorý hľadám &hellip;" />
          <input type="hidden" class="searchtext field" name="page" value="1" />
          <input type="submit" class="button"  id="searchsubmit" value="Hľadať" />
-      </form>
+      </form>*/?>
       <ul id="tabs">
          <li>
             <a href="#" data-rel="tab2">Programátor</a>
