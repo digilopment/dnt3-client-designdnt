@@ -47,7 +47,8 @@ class videoListModulController extends ArticleView{
 		$rest = new Rest;
 		$id = $rest->webhook(3);
 		$show = AdminContent::getPostParam("show", $id);
-		if($show>0){
+		$type = AdminContent::getPostParam("type", $id);
+		if($show>0 && $type == "video"){
 			$custom_data = array(
 				"post_id" => $id,
 				"title" =>  $this->getPostParam("name",  $id)." | ".Settings::get("title") ,
@@ -72,7 +73,7 @@ class videoListModulController extends ArticleView{
 			include "dnt-view/layouts/".Vendor::getLayout()."/bottom.php";
 			
 		}else{
-			include "dnt-view/layouts/".Vendor::getLayout()."/modules/default/tpl.php";
+			$rest->loadDefault();
 		}
 	}
 	
