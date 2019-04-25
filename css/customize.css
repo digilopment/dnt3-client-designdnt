@@ -56,22 +56,22 @@ blockquote cite,
 .ns_nerveSlider .ns_loadSpinner div {
     background-position: center center !important;
     background-repeat: no-repeat !important;
-    background-image: url('http://arc-wp.wp4life.com/wp-content/themes/arc-wp/images/loader.gif') !important;
+    background-image: url('../images/loader.gif') !important;
 }
 #tiles li a.link {
     background-position: center center;
     background-repeat: no-repeat;
-    background-image: url('http://arc-wp.wp4life.com/wp-content/themes/arc-wp/images/link.png') !important;
+    background-image: url('../images/link.png') !important;
 }
 .clb-photo {
     background-position: center center;
     background-repeat: no-repeat;
-    background-image: url('http://arc-wp.wp4life.com/wp-content/themes/arc-wp/images/search.png') !important;
+    background-image: url('../images/search.png') !important;
 }
 .post-link {
     background-position: center center;
     background-repeat: no-repeat;
-    background-image: url('http://arc-wp.wp4life.com/wp-content/themes/arc-wp/images/link.png') !important;
+    background-image: url('../images/link.png') !important;
 }
 body,
 .blackbox,
