@@ -55,11 +55,11 @@ function custom_modules($webhook = false){
 		),
 		//AUTOREDIRECT
 		"auto_redirect" => array_merge(
-				array(), array("a/{digit}")
+			array(), array("a/{digit}")
 		),			
 		//VIDEO EMBED
 		"video_embed" => array_merge(
-				array(), array("embed/video/{digit}")
+			array(), array("embed/video/{digit}")
 		),
 		
 		//RPC
