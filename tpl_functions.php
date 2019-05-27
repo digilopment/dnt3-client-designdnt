@@ -9,6 +9,7 @@
 			echo $meta;
 		}
 		?>
+		<meta name="robots" content="index,follow" />
 		<meta name="author" content="designdnt">
 		<meta name="viewport" content="width=device-width" />
 		<?php
