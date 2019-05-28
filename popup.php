@@ -28,23 +28,23 @@
          <h3 class="widget-title">Kontakt</h3>
          <ul class="social-icons">
             <li>
-               <a target="_blank" href="mailto:<?php echo Frontend::getMetaSetting($data, "vendor_email");?>">
-               <img class="social-icon" src="<?php echo $data['media_path']; ?>/images/gmail.png" alt="" style="margin: 0 7px;"/>
+               <a target="_blank" href="<?php echo WWW_PATH."a/14859";?>">
+               <img class="social-icon" src="<?php echo $data['media_path']; ?>images/gmail.png" alt="" style="margin: 0 7px;"/>
                </a>
             </li>
             <li>
                <a target="_blank" href="<?php echo $data['meta_settings']['keys']['facebook_page']['value'] ?>">
-               <img class="social-icon" src="<?php echo $data['media_path']; ?>/images/social_facebook.png" alt="" style="margin: 0 7px;"/>
+               <img class="social-icon" src="<?php echo $data['media_path']; ?>images/social_facebook.png" alt="" style="margin: 0 7px;"/>
                </a>
             </li>
             <li>
-               <a target="_self" href="mailto:<?php echo WWW_PATH."a/14859";?>">
-               <img class="social-icon" src="<?php echo $data['media_path']; ?>/images/kontakt-form.png" alt="" style="margin: 0 7px;"/>
+               <a target="_self" href="<?php echo WWW_PATH."a/14859";?>">
+               <img class="social-icon" src="<?php echo $data['media_path']; ?>images/kontakt-form.png" alt="" style="margin: 0 7px;"/>
                </a>
             </li>
             <li>
                <a target="_blank" href="<?php echo $data['meta_settings']['keys']['linked_in']['value'] ?>">
-               <img class="social-icon" src="<?php echo $data['media_path']; ?>/images/linkedin.png" alt="" style="margin: 0 7px;"/>
+               <img class="social-icon" src="<?php echo $data['media_path']; ?>images/linkedin.png" alt="" style="margin: 0 7px;"/>
                </a>
             </li>
          </ul>

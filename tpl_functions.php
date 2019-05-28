@@ -53,7 +53,7 @@
           }
           $image = $article->getPostImage($row['id_entity']);
           ?>
-		  <div><img alt="<?php echo $row['name']; ?>" src="<?php echo $image; ?>"/></div>
+		  <div><img alt="<?php echo $row['name']; ?>" alt="" src="<?php echo $image; ?>"/></div>
    <?php } ?>
 </div>
 <!-- END Master Slider -->
