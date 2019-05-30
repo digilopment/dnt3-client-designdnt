@@ -10,7 +10,7 @@
 		}
 		?>
 		<meta name="robots" content="index,follow" />
-		<meta name="author" content="designdnt">
+		<meta name="author" content="digilopment">
 		<meta name="viewport" content="width=device-width" />
 		<?php
 		$favicon = Settings::getImage($data['meta_settings']['keys']['favicon']['value']);
