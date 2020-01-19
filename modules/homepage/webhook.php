@@ -1,5 +1,6 @@
 <?php
-class homepageModulController{
+
+class homepageModulController extends BaseController{
 	
 	public function run(){
 		$article 	= new ArticleView;
@@ -19,7 +20,8 @@ class homepageModulController{
 				 '<meta content="'.$articleImage.'" property="og:image" />',
 			),
 		);
-		include "tpl.php";
+		$data = Frontend::get($custom_data);
+		$this->modulLoader($data, "tpl.php");
 	}
 }
 
