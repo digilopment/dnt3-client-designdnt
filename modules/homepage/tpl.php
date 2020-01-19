@@ -1,5 +1,4 @@
 <?php 
-   $data = Frontend::get($custom_data);
    include "dnt-view/layouts/".Vendor::getLayout()."/tpl_functions.php";
    ?>
 <?php get_top($data); ?>
