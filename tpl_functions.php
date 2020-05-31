@@ -1,3 +1,17 @@
+<?php
+
+use DntLibrary\Base\AdminContent;
+use DntLibrary\Base\ArticleView;
+use DntLibrary\Base\DB;
+use DntLibrary\Base\Dnt;
+use DntLibrary\Base\Frontend;
+use DntLibrary\Base\MultyLanguage;
+use DntLibrary\Base\Navigation;
+use DntLibrary\Base\Rest;
+use DntLibrary\Base\Settings;
+use DntLibrary\Base\Url;
+use DntLibrary\Base\Vendor;
+?>
 <?php function get_top($data){?>
 <!DOCTYPE html>
 <html lang="<?php echo Frontend::getMetaSetting($data, "language"); ?>"  class="js csstransitions">
@@ -39,7 +53,7 @@
 <?php
    $multylanguage = new MultyLanguage;
    $article = new ArticleView;
-   $db = new Db;
+   $db = new DB;
    $query = "SELECT * FROM dnt_posts WHERE type = 'post' AND cat_id = '" . AdminContent::getCatId("sliders") . "' AND vendor_id = '" . Vendor::getId() . "' AND `show` > 0";
    if ($db->num_rows($query) > 0) {
        ?>

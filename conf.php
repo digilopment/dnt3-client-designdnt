@@ -1,5 +1,8 @@
 <?php
 
+use DntLibrary\Base\Vendor;
+use DntLibrary\Base\Webhook;
+
 function custom_modules($webhook = false)
 {
     //$webhook = new Modul();
@@ -136,7 +139,7 @@ function modulesConfig()
             "service_name" => "Presmerovanie",
             "sql" => ""
         ),
-         "product_detail" => array(
+        "product_detail" => array(
             "service_name" => "Detail produktu",
             "sql" => ""
         ),

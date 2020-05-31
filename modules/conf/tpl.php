@@ -1,3 +1,10 @@
+<?php
+
+use DntLibrary\Base\ArticleView;
+use DntLibrary\Base\Image;
+use DntLibrary\Base\MultyLanguage;
+use DntLibrary\Base\Vendor;
+?>
 <div id='main'>
     <?php include "dnt-view/layouts/" . Vendor::getLayout() . "/top.php"; ?>
     <section id="right">

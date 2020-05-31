@@ -1,8 +1,16 @@
 <?php
 
-class homepageModulController extends BaseController {
+use DntLibrary\App\BaseController;
+use DntLibrary\Base\ArticleView;
+use DntLibrary\Base\Frontend;
+use DntLibrary\Base\Rest;
+use DntLibrary\Base\Settings;
 
-    public function run() {
+class homepageModulController extends BaseController
+{
+
+    public function run()
+    {
         $article = new ArticleView;
         $rest = new Rest;
         $id = $article->getStaticId();

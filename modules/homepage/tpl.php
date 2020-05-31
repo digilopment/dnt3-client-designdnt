@@ -1,4 +1,8 @@
 <?php 
+use DntLibrary\Base\ArticleView;
+use DntLibrary\Base\Image;
+use DntLibrary\Base\MultyLanguage;
+use DntLibrary\Base\Vendor;
    include "dnt-view/layouts/".Vendor::getLayout()."/tpl_functions.php";
    ?>
 <?php get_top($data); ?>
