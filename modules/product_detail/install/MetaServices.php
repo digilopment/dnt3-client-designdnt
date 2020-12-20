@@ -2,6 +2,8 @@
 
 namespace DntView\Layout\Modul\Install;
 
+use DntLibrary\Base\Vendor;
+
 class MetaServices
 {
 
