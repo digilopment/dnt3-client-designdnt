@@ -12,23 +12,25 @@ class homepageModulController extends BaseController
     public function run()
     {
         $article = new ArticleView;
+        $frontend = new Frontend;
+        $settings = new Settings;
         $rest = new Rest;
         $id = $article->getStaticId();
         $articleName = $article->getPostParam("name", $id);
         $articleImage = $article->getPostImage($id);
 
         $custom_data = array(
-            "title" => $articleName . " | " . Settings::get("title"),
+            "title" => $articleName . " | " . $settings->get("title"),
             "meta" => array(
                 '<meta name="keywords" content="' . $article->getPostParam("tags", $id) . '" />',
-                '<meta name="description" content="' . Settings::get("description") . '" />',
+                '<meta name="description" content="' . $settings->get("description") . '" />',
                 '<meta content="' . $articleName . '" property="og:title" />',
                 '<meta content="' . SERVER_NAME . '" property="og:site_name" />',
                 '<meta content="article" property="og:type" />',
                 '<meta content="' . $articleImage . '" property="og:image" />',
             ),
         );
-        $data = Frontend::get($custom_data);
+        $data = $frontend->get($custom_data);
         $this->modulLoader($data, "tpl.php");
     }
 

@@ -2,18 +2,25 @@
 
 namespace DntView\Layout\Modul\Install;
 
+use DntLibrary\Base\Vendor;
+
 class MetaServices
 {
 
     protected $content = '0';
-
+	
+	public function __construct(){
+		$this->frontend = new Frontend();
+	}
+	
+	
     public function init($postId, $service)
     {
         $defaultContent = $this->content;
         $insertedData[] = array(
             '`post_id`' => $postId,
             '`service`' => $service,
-            '`vendor_id`' => Vendor::getId(),
+            '`vendor_id`' => $this->vendor->getId(),
             '`key`' => "price",
             '`value`' => $defaultContent,
             '`content_type`' => "text",
@@ -25,7 +32,7 @@ class MetaServices
         $insertedData[] = array(
             '`post_id`' => $postId,
             '`service`' => $service,
-            '`vendor_id`' => Vendor::getId(),
+            '`vendor_id`' => $this->vendor->getId(),
             '`key`' => "category",
             '`value`' => $defaultContent,
             '`content_type`' => "text",

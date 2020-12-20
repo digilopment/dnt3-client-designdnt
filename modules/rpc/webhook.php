@@ -21,4 +21,5 @@ class rpcModulController
 
 }
 
-rpcModulController::run();
+$modul = new rpcModulController();
+$modul->run();

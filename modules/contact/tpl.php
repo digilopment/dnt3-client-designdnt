@@ -7,32 +7,38 @@ use DntLibrary\Base\GoogleCaptcha;
 use DntLibrary\Base\MultyLanguage;
 use DntLibrary\Base\Vendor;
 
-$data = Frontend::get($custom_data);
-include "dnt-view/layouts/" . Vendor::getLayout() . "/tpl_functions.php";
-$multylanguage = new MultyLanguage;
-$article = new ArticleView;
 
-$translate['sidlo'] = MultyLanguage::translate($data, "sidlo", "translate");
-$translate['kontakt'] = MultyLanguage::translate($data, "kontakt", "translate");
-$translate['meno'] = MultyLanguage::translate($data, "meno", "translate");
-$translate['ulica'] = MultyLanguage::translate($data, "ulica", "translate");
-$translate['mesto'] = MultyLanguage::translate($data, "mesto", "translate");
-$translate['email'] = MultyLanguage::translate($data, "email", "translate");
-$translate['tel_c'] = MultyLanguage::translate($data, "tel_c", "translate");
-$translate['pobocka'] = MultyLanguage::translate($data, "pobocka", "translate");
-$translate['nazov'] = MultyLanguage::translate($data, "nazov", "translate");
-$translate['thankyou_for_registration'] = MultyLanguage::translate($data, "thankyou_for_registration", "translate");
-$translate['odoslat_btn'] = MultyLanguage::translate($data, "odoslat_btn", "translate");
-$translate['field_word_err'] = MultyLanguage::translate($data, "field_word_err", "translate");
-$translate['predmet'] = MultyLanguage::translate($data, "predmet", "translate");
-$translate['priezvisko'] = MultyLanguage::translate($data, "priezvisko", "translate");
-$translate['sprava'] = MultyLanguage::translate($data, "sprava", "translate");
-$translate['formular'] = MultyLanguage::translate($data, "formular", "translate");
+$multiLanguage = new MultyLanguage;
+$article = new ArticleView;
+$vendor = new Vendor;
+$frontend = new Frontend;
+$dnt = new Dnt;
+
+
+$data = $frontend->get($custom_data);
+include "dnt-view/layouts/" . $vendor->getLayout() . "/tpl_functions.php";
+
+$translate['sidlo'] = $multiLanguage->translate($data, "sidlo", "translate");
+$translate['kontakt'] = $multiLanguage->translate($data, "kontakt", "translate");
+$translate['meno'] = $multiLanguage->translate($data, "meno", "translate");
+$translate['ulica'] = $multiLanguage->translate($data, "ulica", "translate");
+$translate['mesto'] = $multiLanguage->translate($data, "mesto", "translate");
+$translate['email'] = $multiLanguage->translate($data, "email", "translate");
+$translate['tel_c'] = $multiLanguage->translate($data, "tel_c", "translate");
+$translate['pobocka'] = $multiLanguage->translate($data, "pobocka", "translate");
+$translate['nazov'] = $multiLanguage->translate($data, "nazov", "translate");
+$translate['thankyou_for_registration'] = $multiLanguage->translate($data, "thankyou_for_registration", "translate");
+$translate['odoslat_btn'] = $multiLanguage->translate($data, "odoslat_btn", "translate");
+$translate['field_word_err'] = $multiLanguage->translate($data, "field_word_err", "translate");
+$translate['predmet'] = $multiLanguage->translate($data, "predmet", "translate");
+$translate['priezvisko'] = $multiLanguage->translate($data, "priezvisko", "translate");
+$translate['sprava'] = $multiLanguage->translate($data, "sprava", "translate");
+$translate['formular'] = $multiLanguage->translate($data, "formular", "translate");
 ?>
 <?php get_top($data); ?>
 <body class="home page page-id-243 page-template page-template-homepage page-template-homepage-php custom-background">
     <div id='main'>
-        <?php include "dnt-view/layouts/" . Vendor::getLayout() . "/top.php"; ?>
+        <?php include "dnt-view/layouts/" . $vendor->getLayout() . "/top.php"; ?>
         <section id="right">
             <div class="wrapper">
                 <div class="wrap">
@@ -43,13 +49,13 @@ $translate['formular'] = MultyLanguage::translate($data, "formular", "translate"
                             <!-- FLEX MAP  -->             
                             <div class="grid-6">
                                 <h3><?php echo $translate["kontakt"] ?></h3>
-                                <p><strong><?php echo $translate['nazov'] ?>:</strong> <?php echo Frontend::getMetaSetting($data, "vendor_company"); ?></p>
-                                <p><strong><?php echo $translate['ulica'] ?>:</strong> <?php echo Frontend::getMetaSetting($data, "vendor_street"); ?></p>
-                                <p><strong><?php echo $translate['mesto'] ?>:</strong> <?php echo Frontend::getMetaSetting($data, "vendor_psc"); ?> <?php echo Frontend::getMetaSetting($data, "vendor_city"); ?></p>
-                                <p><strong><?php echo $translate['tel_c']; ?></strong>  <?php echo Frontend::getMetaSetting($data, "vendor_tel"); ?></p>
-                                <p><strong><?php echo $translate['email']; ?></strong>  <?php echo Frontend::getMetaSetting($data, "vendor_email"); ?></p>
+                                <p><strong><?php echo $translate['nazov'] ?>:</strong> <?php echo $frontend->getMetaSetting($data, "vendor_company"); ?></p>
+                                <p><strong><?php echo $translate['ulica'] ?>:</strong> <?php echo $frontend->getMetaSetting($data, "vendor_street"); ?></p>
+                                <p><strong><?php echo $translate['mesto'] ?>:</strong> <?php echo $frontend->getMetaSetting($data, "vendor_psc"); ?> <?php echo $frontend->getMetaSetting($data, "vendor_city"); ?></p>
+                                <p><strong><?php echo $translate['tel_c']; ?></strong>  <?php echo $frontend->getMetaSetting($data, "vendor_tel"); ?></p>
+                                <p><strong><?php echo $translate['email']; ?></strong>  <?php echo $frontend->getMetaSetting($data, "vendor_email"); ?></p>
                                 <p><strong>Facebook:</strong>  <a href="https://www.facebook.com/dynatom/" target="blank_">www.facebook.com/dynatom</a></p>
-                                <p><strong>IČO:</strong>  <?php echo Frontend::getMetaSetting($data, "vendor_ico"); ?></p>
+                                <p><strong>IČO:</strong>  <?php echo $frontend->getMetaSetting($data, "vendor_ico"); ?></p>
                             </div>
                             <div class="grid-6">
                                 <h3 id="kontaktny-formular">Info</h3>
@@ -197,12 +203,12 @@ $translate['formular'] = MultyLanguage::translate($data, "formular", "translate"
                                 </div>
                             </div>
                             <div class="grid-12">
-                                <h3 ><?php echo MultyLanguage::translate($data, "mapa", "translate"); ?></h3>
+                                <h3 ><?php echo $multiLanguage->translate($data, "mapa", "translate"); ?></h3>
                                 <div class="flex-video widescreen gmap">
 
                                     <?php
                                     $googleMapsUrl = $data['meta_settings']['keys']['google_map']['value'];
-                                    $mapLocation = Dnt::getMapLocation($googleMapsUrl);
+                                    $mapLocation = $dnt->getMapLocation($googleMapsUrl);
                                     $map_first = $mapLocation[0];
                                     $map_second = $mapLocation[1];
                                     $zoom = "12";
@@ -218,8 +224,8 @@ $translate['formular'] = MultyLanguage::translate($data, "formular", "translate"
             <!-- END WRAPPER   -->
             <!-- ICONS  -->
             <div id="top">
-                <b><small> <?php echo MultyLanguage::translate($data, "data_protection", "translate") ?> | <?php echo date("Y"); ?> | <?php echo MultyLanguage::translate($data, "impressum", "translate") ?></small></b>
+                <b><small> <?php echo $multiLanguage->translate($data, "data_protection", "translate") ?> | <?php echo date("Y"); ?> | <?php echo $multiLanguage->translate($data, "impressum", "translate") ?></small></b>
             </div>
         </section>
     </div>
-    <?php include "dnt-view/layouts/" . Vendor::getLayout() . "/bottom.php"; ?>
+    <?php include "dnt-view/layouts/" . $vendor->getLayout() . "/bottom.php"; ?>

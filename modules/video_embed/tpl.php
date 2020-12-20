@@ -1,7 +1,7 @@
 <?php
 
 use DntLibrary\Base\Settings;
-
+$settings = new Settings();
 ?><!DOCTYPE html>
 <html>
     <head>
@@ -14,7 +14,7 @@ use DntLibrary\Base\Settings;
         <meta name="author" content="designdnt">
         <meta name="viewport" content="width=device-width" />
         <?php
-        $favicon = Settings::getImage($data['meta_settings']['keys']['favicon']['value']);
+        $favicon = $settings->getImage($data['meta_settings']['keys']['favicon']['value']);
         ?>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- Chang URLs to wherever Video.js files will be hosted -->

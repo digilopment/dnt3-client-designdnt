@@ -9,17 +9,19 @@ class singlPageProgressModulController
 
     public function run()
     {
-        $article = new ArticleView;
+         $article = new ArticleView;
         $rest = new Rest;
+        $settings = new Settings;
         $id = $article->getStaticId();
         $articleName = $article->getPostParam("name", $id);
         $articleImage = $article->getPostImage($id);
 
         $custom_data = array(
-            "title" => $articleName . " | " . Settings::get("title"),
+            "title" => $articleName . " | " .  $settings->get("title"),
+            "post_id" => $article->getStaticId(),
             "meta" => array(
                 '<meta name="keywords" content="' . $article->getPostParam("tags", $id) . '" />',
-                '<meta name="description" content="' . $articleName . '" />',
+                '<meta name="description" content="' .  $settings->get("description") . '" />',
                 '<meta content="' . $articleName . '" property="og:title" />',
                 '<meta content="' . SERVER_NAME . '" property="og:site_name" />',
                 '<meta content="article" property="og:type" />',
@@ -27,7 +29,7 @@ class singlPageProgressModulController
             ),
         );
 
-        if ($rest->webhook(2)) { //o jeden vyssi webhook ako maximalnz mozny
+        if ($rest->webhook(2)) {
             $rest->loadDefault();
         } else {
             include "tpl.php";
@@ -36,4 +38,5 @@ class singlPageProgressModulController
 
 }
 
-singlPageProgressModulController::run();
+$modul = new singlPageProgressModulController();
+$modul->run();
