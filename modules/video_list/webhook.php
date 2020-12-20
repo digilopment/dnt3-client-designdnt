@@ -14,7 +14,6 @@ class videoListModulController extends ArticleView
 
 	
 	public function __construct(){
-		parent::__construct();
 		$this->settings = new Settings();
 		$this->vendor = new Vendor();
 		$this->frontend = new Frontend();
