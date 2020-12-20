@@ -12,6 +12,15 @@ class videoListModulController extends ArticleView
 
     protected $detailHook = "video-detail";
 
+	
+	public function __construct(){
+		parent::__construct();
+		$this->settings = new Settings();
+		$this->vendor = new Vendor();
+		$this->frontend = new Frontend();
+		$this->adminContent = new AdminContent();
+	}
+	
     public function run()
     {
         $rest = new Rest;
@@ -32,10 +41,10 @@ class videoListModulController extends ArticleView
         $articleImage = $article->getPostImage($id);
 
         $custom_data = array(
-            "title" => $articleName . " | " . Settings::get("title"),
+            "title" => $articleName . " | " . $this->settings->get("title"),
             "meta" => array(
                 '<meta name="keywords" content="' . $article->getPostParam("tags", $id) . '" />',
-                '<meta name="description" content="' . Settings::get("description") . '" />',
+                '<meta name="description" content="' . $this->settings->get("description") . '" />',
                 '<meta content="' . $articleName . '" property="og:title" />',
                 '<meta content="' . SERVER_NAME . '" property="og:site_name" />',
                 '<meta content="article" property="og:type" />',
@@ -43,27 +52,27 @@ class videoListModulController extends ArticleView
             ),
             "article_list" => $this->order($this->getPosts($service_id), "datetime_publish", "desc"),
         );
-        $data = Frontend::get($custom_data);
+        $data = $this->frontend->get($custom_data);
 
-        include "dnt-view/layouts/" . Vendor::getLayout() . "/tpl_functions.php";
+        include "dnt-view/layouts/" . $this->vendor->getLayout() . "/tpl_functions.php";
         get_top($data);
         echo '<body class="home page page-id-243 page-template page-template-homepage page-template-homepage-php custom-background">';
         echo '<div id="main">';
-        include "dnt-view/layouts/" . Vendor::getLayout() . "/top.php";
+        include "dnt-view/layouts/" . $this->vendor->getLayout() . "/top.php";
         include "tpl.php";
-        include "dnt-view/layouts/" . Vendor::getLayout() . "/bottom.php";
+        include "dnt-view/layouts/" . $this->vendor->getLayout() . "/bottom.php";
     }
 
     private function detail()
     {
         $rest = new Rest;
         $id = $rest->webhook(3);
-        $show = AdminContent::getPostParam("show", $id);
-        $type = AdminContent::getPostParam("type", $id);
+        $show = $this->adminContent->getPostParam("show", $id);
+        $type = $this->adminContent->getPostParam("type", $id);
         if ($show > 0 && $type == "video") {
             $custom_data = array(
                 "post_id" => $id,
-                "title" => $this->getPostParam("name", $id) . " | " . Settings::get("title"),
+                "title" => $this->getPostParam("name", $id) . " | " . $this->settings->get("title"),
                 "meta" => array(
                     '<meta name="keywords" content="' . $this->getPostParam("tags", $id) . '" />',
                     '<meta name="description" content="' . $this->getPostParam("name", $id) . '" />',
@@ -73,16 +82,16 @@ class videoListModulController extends ArticleView
                     '<meta content="' . $this->getPostImage($id) . '" property="og:image" />',
                 ),
             );
-            $data = Frontend::get($custom_data);
+            $data = $this->frontend->get($custom_data);
 
 
-            include "dnt-view/layouts/" . Vendor::getLayout() . "/tpl_functions.php";
+            include "dnt-view/layouts/" . $this->vendor->getLayout() . "/tpl_functions.php";
             get_top($data);
             echo '<body class="home page page-id-243 page-template page-template-homepage page-template-homepage-php custom-background">';
             echo '<div id="main">';
-            include "dnt-view/layouts/" . Vendor::getLayout() . "/top.php";
-            include "dnt-view/layouts/" . Vendor::getLayout() . "/modules/video_view/tpl.php";
-            include "dnt-view/layouts/" . Vendor::getLayout() . "/bottom.php";
+            include "dnt-view/layouts/" . $this->vendor->getLayout() . "/top.php";
+            include "dnt-view/layouts/" . $this->vendor->getLayout() . "/modules/video_view/tpl.php";
+            include "dnt-view/layouts/" . $this->vendor->getLayout() . "/bottom.php";
         } else {
             $rest->loadDefault();
         }

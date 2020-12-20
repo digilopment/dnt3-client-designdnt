@@ -2,6 +2,7 @@
 
 use DntLibrary\Base\Image;
 use DntLibrary\Base\MultyLanguage;
+$multiLanguage = new MultyLanguage();
 ?><section id="right">
     <div class="wrapper">
         <!-- FILTERS -->
@@ -51,7 +52,7 @@ use DntLibrary\Base\MultyLanguage;
                                 <h6 class="date"><?php echo $date->format("d.m.Y") ?>   </h6>
                                 <?php echo $item['perex']; ?>
                                 <a class="moretag" href="<?php echo $detailUrl; ?>">
-                                    <?php echo MultyLanguage::translate($data, "citat_viac", "translate"); ?>
+                                    <?php echo $multiLanguage->translate($data, "citat_viac", "translate"); ?>
                                 </a>
 
                             </div>
@@ -64,6 +65,6 @@ use DntLibrary\Base\MultyLanguage;
 
     </div>
     <div id="top">
-        <b><small> <?php echo MultyLanguage::translate($data, "data_protection", "translate") ?> | <?php echo date("Y"); ?> | <?php echo MultyLanguage::translate($data, "impressum", "translate") ?></small></b>
+        <b><small> <?php echo $multiLanguage->translate($data, "data_protection", "translate") ?> | <?php echo date("Y"); ?> | <?php echo $multiLanguage->translate($data, "impressum", "translate") ?></small></b>
     </div>
 </section>

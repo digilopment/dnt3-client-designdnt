@@ -11,12 +11,13 @@ class singlPageWidthModulController
     {
         $article = new ArticleView;
         $rest = new Rest;
+        $settings = new Settings;
         $id = $article->getStaticId();
         $articleName = $article->getPostParam("name", $id);
         $articleImage = $article->getPostImage($id);
 
         $custom_data = array(
-            "title" => $articleName . " | " . Settings::get("title"),
+            "title" => $articleName . " | " . $settings->get("title"),
             "post_id" => $article->getStaticId(),
             "meta" => array(
                 '<meta name="keywords" content="' . $article->getPostParam("tags", $id) . '" />',
@@ -37,4 +38,5 @@ class singlPageWidthModulController
 
 }
 
-singlPageWidthModulController::run();
+$modul = new singlPageWidthModulController();
+$modul->run();

@@ -10,12 +10,15 @@ class defaultModulController
     public function run()
     {
         $rest = new Rest;
+        $webhook = new Webhook;
+        $dnt = new Dnt;
+		
         $url = $rest->webhook(1);
         $modulDefaultUrl = "";
         $modulDefaultUrl = false;
-        foreach (Webhook::getSitemapModules("default") as $modulDefaultUrl) {
+        foreach ($webhook->getSitemapModules("default") as $modulDefaultUrl) {
             if ($url != $modulDefaultUrl) {
-                Dnt::redirect(WWW_PATH . $modulDefaultUrl);
+                $dnt->redirect(WWW_PATH . $modulDefaultUrl);
             }
         }
         include "tpl.php";
@@ -23,4 +26,5 @@ class defaultModulController
 
 }
 
-defaultModulController::run();
+$modul = new defaultModulController;
+$modul->run();

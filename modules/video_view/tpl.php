@@ -1,6 +1,7 @@
 <?php
 
 use DntLibrary\Base\MultyLanguage;
+$multiLanguage = new MultyLanguage();
 ?>
 <section id="right">
     <div class="wrapper">
@@ -39,6 +40,6 @@ use DntLibrary\Base\MultyLanguage;
 
     </div>
     <div id="top">
-        <b><small> <?php echo MultyLanguage::translate($data, "data_protection", "translate") ?> | <?php echo date("Y"); ?> | <?php echo MultyLanguage::translate($data, "impressum", "translate") ?></small></b>
+        <b><small> <?php echo $multiLanguage->translate($data, "data_protection", "translate") ?> | <?php echo date("Y"); ?> | <?php echo $multiLanguage->translate($data, "impressum", "translate") ?></small></b>
     </div>
 </section>

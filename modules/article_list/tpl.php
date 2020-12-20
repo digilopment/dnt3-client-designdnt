@@ -6,13 +6,17 @@ use DntLibrary\Base\Image;
 use DntLibrary\Base\MultyLanguage;
 use DntLibrary\Base\Vendor;
 
-$data = Frontend::get();
-include "dnt-view/layouts/" . Vendor::getLayout() . "/tpl_functions.php";
+$frontend = new Frontend();
+$vendor = new Vendor();
+$multiLanguage = new MultyLanguage();
+
+$data = $frontend->get();
+include "dnt-view/layouts/" . $vendor->getLayout() . "/tpl_functions.php";
 ?>
 <?php get_top($data); ?>
 <body class="home page page-id-243 page-template page-template-homepage page-template-homepage-php custom-background">
     <div id='main' class="gallery">
-        <?php include "dnt-view/layouts/" . Vendor::getLayout() . "/top.php"; ?>
+        <?php include "dnt-view/layouts/" . $vendor->getLayout() . "/top.php"; ?>
         <style>
         </style>
         <section id="gallery-right">
@@ -22,7 +26,7 @@ include "dnt-view/layouts/" . Vendor::getLayout() . "/tpl_functions.php";
                         <!-- END grid-12 -->
                         <div>
                             <div class="grid-12">
-                                <h2><?php echo MultyLanguage::translate($data, "progress_text", "translate") ?></h2>
+                                <h2><?php echo $multiLanguage->translate($data, "progress_text", "translate") ?></h2>
                             </div>
                             <?php
                             $posts = new ArticleView;
@@ -51,8 +55,8 @@ include "dnt-view/layouts/" . Vendor::getLayout() . "/tpl_functions.php";
                 </div>
             </div>
             <div id="top">
-                <b><small> <?php echo MultyLanguage::translate($data, "data_protection", "translate") ?> | <?php echo date("Y"); ?> | <?php echo MultyLanguage::translate($data, "impressum", "translate") ?></small></b>
+                <b><small> <?php echo $multiLanguage->translate($data, "data_protection", "translate") ?> | <?php echo date("Y"); ?> | <?php echo $multiLanguage->translate($data, "impressum", "translate") ?></small></b>
             </div>
         </section>
     </div>
-    <?php include "dnt-view/layouts/" . Vendor::getLayout() . "/bottom.php"; ?>
+    <?php include "dnt-view/layouts/" . $vendor->getLayout() . "/bottom.php"; ?>

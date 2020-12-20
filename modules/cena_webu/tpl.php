@@ -3,7 +3,9 @@
 use DntLibrary\Base\Frontend;
 use DntLibrary\Base\Settings;
 
-$data = Frontend::get($custom_data);
+$frontend = new Frontend();
+$settings = new Settings();
+$data = $frontend->get($custom_data);
 $color = 'color: #7dcdaf;';
 $color = 'color: #ff6a9d;';
 
@@ -16,7 +18,7 @@ $GRAYSCALE = "-webkit-filter: grayscale(100%) !important;filter: grayscale(100%)
 $projectName = "Designdnt | Firma";
 ?>
 <!DOCTYPE html>
-<html lang="<?php echo Frontend::getMetaSetting($data, "language"); ?>">
+<html lang="<?php echo $frontend->getMetaSetting($data, "language"); ?>">
     <head>
         <meta charset="utf-8">
         <title><?php echo $data['title']; ?></title>
@@ -29,7 +31,7 @@ $projectName = "Designdnt | Firma";
         <meta name="author" content="designdnt">
         <meta name="viewport" content="width=device-width" />
         <?php
-        $favicon = Settings::getImage($data['meta_settings']['keys']['favicon']['value']);
+        $favicon = $settings->getImage($data['meta_settings']['keys']['favicon']['value']);
         ?>
 
         <!-- Favicone Icon -->
@@ -150,7 +152,7 @@ $projectName = "Designdnt | Firma";
           Aplikujeme moderné dizajnové princípy spolu s najnovšími webovými technológiami a vytvárame riešenia
           šité na mieru, ktoré prinášajú hodnotu tým, že spájajú ľudí so sebou navzájom a so svojimi zákazníkmi.
           V prípade akýchkoľvek otázok nás kontaktujte na
-          <a style="<?php echo $color;?>" href="mailto:<?php echo Frontend::getMetaSetting($data, "vendor_email"); ?>"><?php echo Frontend::getMetaSetting($data, "vendor_email"); ?></a>
+          <a style="<?php echo $color;?>" href="mailto:<?php echo $frontend->getMetaSetting($data, "vendor_email"); ?>"><?php echo $frontend->getMetaSetting($data, "vendor_email"); ?></a>
           alebo navštívte náš web
           <a style="<?php echo $color;?>" href="http://designdnt.query.sk">designdnt.query.sk</a>
 

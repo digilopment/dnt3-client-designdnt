@@ -16,8 +16,15 @@ header('Access-Control-Allow-Origin: *');
 $rest = new Rest;
 $mailer = new Mailer;
 $mail = new Dnt;
-$data = Frontend::get();
+$frontend = new Frontend;
+$multiLanguage = new MultyLanguage;
+$settings = new Settings;
+$vendor = new Vendor;
+$dnt = new Dnt;
 $db = new DB;
+
+
+$data = $frontend->get();
 $siteKey = $data['meta_settings']['keys']['gc_site_key']['value'];
 $secretKey = $data['meta_settings']['keys']['gc_secret_key']['value'];
 $gc = new GoogleCaptcha($siteKey, $secretKey);
@@ -43,7 +50,7 @@ if ($rest->post("sent_msg")) {
         $psc = "" . $rest->post("psc");
         $mesto = "" . $rest->post("mesto");
         $produkt = "" . $rest->post("produkt");
-        $od_meno = Settings::get("vendor_email") . " - " . $predmet;
+        $od_meno = $settings->get("vendor_email") . " - " . $predmet;
         $sprava = $rest->post("sprava");
 
 
@@ -56,9 +63,9 @@ if ($rest->post("sent_msg")) {
 		<b>SPRÁVA</b>:
 		" . $sprava . "<br/><br/><b>Kontaktný email odosielateľa: <a href=\"mailto:" . $email . "\">" . $email . "</a></b>";
 
-        if (Frontend::getMetaSetting($data, "notifikacny_email")) {
-            $senderEmail = Frontend::getMetaSetting($data, "notifikacny_email");
-            $messageTitle = Frontend::getMetaSetting($data, "title") . " | " . $meno . " " . $priezvisko . " | " . MultyLanguage::translate($data, "formular", "translate");
+        if ($frontend->getMetaSetting($data, "notifikacny_email")) {
+            $senderEmail = $frontend->getMetaSetting($data, "notifikacny_email");
+            $messageTitle = $frontend->getMetaSetting($data, "title") . " | " . $meno . " " . $priezvisko . " | " . $multiLanguage->translate($data, "formular", "translate");
 
             $mailer->set_recipient(array($senderEmail));
             $mailer->set_msg($msg);
@@ -76,15 +83,15 @@ if ($rest->post("sent_msg")) {
          * ZAPIS DO POSTOV
          * */
         $insertedData = array(
-                    'vendor_id' => Vendor::getId(),
+                    'vendor_id' => $vendor->getId(),
                     'cat_id' => "306",
                     'sub_cat_id' => "",
                     '`type`' => "post",
-                    'datetime_creat' => Dnt::datetime(),
-                    'datetime_update' => Dnt::datetime(),
-                    'datetime_publish' => Dnt::datetime(),
+                    'datetime_creat' => $dnt->datetime(),
+                    'datetime_update' => $dnt->datetime(),
+                    'datetime_publish' => $dnt->datetime(),
                     'name' => $name,
-                    'name_url' => Dnt::name_url($name),
+                    'name_url' => $dnt->name_url($name),
                     'content' => $msg,
                     '`show`' => '0'
         );

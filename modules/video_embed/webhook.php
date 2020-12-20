@@ -15,15 +15,18 @@ class videoEmbedModulController
         $article = new ArticleView;
         $rest = new Rest;
         $image = new Image;
+        $adminContent = new AdminContent;
+        $settings = new Settings;
+        $frontend = new Frontend;
 
         $id = $rest->webhook(3);
-        $show = AdminContent::getPostParam("show", $id);
+        $show =  $adminContent->getPostParam("show", $id);
         if ($id && $show) {
             $video_id = $article->getPostParam("service_id", $id);
             $video_image = $article->getPostImage($id);
             $custom_data = array(
                 "post_id" => $id,
-                "title" => $article->getPostParam("name", $id) . " | " . Settings::get("title"),
+                "title" => $article->getPostParam("name", $id) . " | " . $settings->get("title"),
                 "meta" => array(
                     '<meta name="keywords" content="' . $article->getPostParam("tags", $id) . '" />',
                     '<meta name="description" content="' . $article->getPostParam("name", $id) . '" />',
@@ -36,7 +39,7 @@ class videoEmbedModulController
                 "image" => $video_image,
                 "video_file" => $image->getFileImage($video_id)
             );
-            $data = Frontend::get($custom_data);
+            $data = $frontend->get($custom_data);
             include "tpl.php";
         } else {
             $rest->loadDefault();
@@ -45,4 +48,5 @@ class videoEmbedModulController
 
 }
 
-videoEmbedModulController::run();
+$modul = new videoEmbedModulController();
+$modul->run();

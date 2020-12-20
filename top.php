@@ -2,17 +2,20 @@
 
 use DntLibrary\Base\Settings;
 use DntLibrary\Base\Vendor;
+
+$settings = new Settings();
+$vendor = new Vendor();
 ?>
 <div id="left-menu-close-icon"></div>
 <!-- MENU ICONS  -->
 <div id="left-menu-icon" ></div>
 <div id='logo'>
     <?php
-    $logo_firmy = Settings::getImage($data['meta_settings']['keys']['logo_firmy']['value']);
-    $logo_firmy_2 = Settings::getImage($data['meta_settings']['keys']['logo_firmy_2']['value']);
-    $logo_firmy_3 = Settings::getImage($data['meta_settings']['keys']['logo_firmy_3']['value']);
+    $logo_firmy = $settings->getImage($data['meta_settings']['keys']['logo_firmy']['value']);
+    $logo_firmy_2 = $settings->getImage($data['meta_settings']['keys']['logo_firmy_2']['value']);
+    $logo_firmy_3 = $settings->getImage($data['meta_settings']['keys']['logo_firmy_3']['value']);
 
-    $logoAlt = "Logo - " . Settings::get("title");
+    $logoAlt = "Logo - " . $settings->get("title");
 
     $logo_url = $data['meta_settings']['keys']['logo_url']['value'];
     $logo_url_2 = $data['meta_settings']['keys']['logo_url_2']['value'];
@@ -42,7 +45,7 @@ use DntLibrary\Base\Vendor;
     <?php get_slider($data); ?>
 </section>
 
-<?php include "dnt-view/layouts/" . Vendor::getLayout() . "/popup.php"; ?>
+<?php include "dnt-view/layouts/" . $vendor->getLayout() . "/popup.php"; ?>
 <!-- LISTA END -->
 <?php
 if ($data['meta_settings']['keys']['ga_key']['show'] == 1) {

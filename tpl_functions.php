@@ -12,9 +12,13 @@ use DntLibrary\Base\Settings;
 use DntLibrary\Base\Url;
 use DntLibrary\Base\Vendor;
 ?>
-<?php function get_top($data){?>
+<?php 
+function get_top($data){
+$frontend = new Frontend();	
+$settings = new Settings();	
+?>
 <!DOCTYPE html>
-<html lang="<?php echo Frontend::getMetaSetting($data, "language"); ?>"  class="js csstransitions">
+<html lang="<?php echo $frontend->getMetaSetting($data, "language"); ?>"  class="js csstransitions">
    <head>
       <meta charset="utf-8">
 		<title><?php echo $data['title']; ?></title>
@@ -27,7 +31,7 @@ use DntLibrary\Base\Vendor;
 		<meta name="author" content="digilopment">
 		<meta name="viewport" content="width=device-width" />
 		<?php
-		$favicon = Settings::getImage($data['meta_settings']['keys']['favicon']['value']);
+		$favicon = $settings->getImage($data['meta_settings']['keys']['favicon']['value']);
 		?>
 		<!-- Favicone Icon -->
 		<link rel="" type="img/x-icon" href="<?php echo $favicon; ?>" />
@@ -52,15 +56,18 @@ use DntLibrary\Base\Vendor;
    ?>
 <?php
    $multylanguage = new MultyLanguage;
+   $adminContent = new AdminContent;
    $article = new ArticleView;
+   $vendor = new Vendor;
+   $dnt = new Dnt;
    $db = new DB;
-   $query = "SELECT * FROM dnt_posts WHERE type = 'post' AND cat_id = '" . AdminContent::getCatId("sliders") . "' AND vendor_id = '" . Vendor::getId() . "' AND `show` > 0";
+   $query = "SELECT * FROM dnt_posts WHERE type = 'post' AND cat_id = '" . $adminContent->getCatId("sliders") . "' AND vendor_id = '" . $vendor->getId() . "' AND `show` > 0";
    if ($db->num_rows($query) > 0) {
        ?>
 <div id="nerve-slider">
    <?php
       foreach ($db->get_results($query) as $row) {
-          if (Dnt::is_external_url($row['name_url'])) {
+          if ($dnt->is_external_url($row['name_url'])) {
               $nameUrl = $row['name_url'];
           } else {
               $nameUrl = false;
@@ -103,12 +110,14 @@ use DntLibrary\Base\Vendor;
 <?php } ?>
 <?php function get_nav_menu($data){
 $rest = new Rest();
+$navigation = new Navigation();
+$url = new Url();
 ?>
 <nav class="menu-menu-container">
 	<ul id="nav" class="">
 	<?php
-		foreach (Navigation::getParents() as $row) {
-			$name_url_1 = Url::getPostUrl($row['name_url']);
+		foreach ($navigation->getParents() as $row) {
+			$name_url_1 = $url->getPostUrl($row['name_url']);
 			if ($row['name_url'] == $rest->webhook(1)) {
 				$cActive1 = "active current_page_item current-menu-item";
 			}else{
@@ -121,11 +130,11 @@ $rest = new Rest();
 				<?php } else { ?>
 					<a class="" href="<?php echo $name_url_1; ?>"><?php echo $row['name']; ?></a>
 					<?php } ?>
-					<?php if (Navigation::hasChild($row['id_entity'])) { ?>
+					<?php if ($navigation->hasChild($row['id_entity'])) { ?>
 					<ul class="dropdown-menu">
 						<?php
-						foreach (Navigation::getChildren($row['id_entity']) as $row2) {
-							$name_url_2 = Url::getPostUrl($row2['name_url']);
+						foreach ($navigation->getChildren($row['id_entity']) as $row2) {
+							$name_url_2 = $url->getPostUrl($row2['name_url']);
 							if ($row2['name_url'] == $rest->webhook(1)) {
 								$cActive2 = "active current_page_item current-menu-item";
 							}else{

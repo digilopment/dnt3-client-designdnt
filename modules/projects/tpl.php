@@ -8,15 +8,20 @@ use DntLibrary\Base\Image;
 use DntLibrary\Base\MultyLanguage;
 use DntLibrary\Base\Vendor;
 
-$data = Frontend::get($custom_data);
-include "dnt-view/layouts/" . Vendor::getLayout() . "/tpl_functions.php";
+$frontend = new Frontend();
+$vendor = new Vendor();
+$multiLanguage = new MultyLanguage();
+$articleList = new ArticleList();
+
+$data = $frontend->get($custom_data);
+include "dnt-view/layouts/" . $vendor->getLayout() . "/tpl_functions.php";
 ?>
 <?php get_top($data); ?>
 <!-- Trigger the modal with a button -->
 
 <body class="home page page-id-243 page-template page-template-homepage page-template-homepage-php custom-background">
     <div id='main' class="gallery">
-        <?php include "dnt-view/layouts/" . Vendor::getLayout() . "/top.php"; ?>
+        <?php include "dnt-view/layouts/" . $vendor->getLayout() . "/top.php"; ?>
         <style>
             .modal-backdrop.in {
                 filter: alpha(opacity=50);
@@ -86,9 +91,9 @@ include "dnt-view/layouts/" . Vendor::getLayout() . "/tpl_functions.php";
                         $articleView = new ArticleView;
                         $db = new DB();
                         $image = new Image;
-                        $query = ArticleList::prepare_query(false);
+                        $query = $articleList->prepare_query(false);
                         foreach ($db->get_results($query) as $row) {
-                            $img = Image::getPostImage($row['id'], "dnt_posts");
+                            $img = $image->getPostImage($row['id'], "dnt_posts");
                             $url = $articleView->detailUrl($row['cat_name_url'], $row['id'], $row['name_url']);
 
                             $name = $row['name'];
@@ -111,14 +116,14 @@ include "dnt-view/layouts/" . Vendor::getLayout() . "/tpl_functions.php";
                 </div>
             </div>
             <div id="top">
-                <b><small> <?php echo MultyLanguage::translate($data, "data_protection", "translate") ?> | <?php echo date("Y"); ?> | <?php echo MultyLanguage::translate($data, "impressum", "translate") ?></small></b>
+                <b><small> <?php echo $multiLanguage->translate($data, "data_protection", "translate") ?> | <?php echo date("Y"); ?> | <?php echo $multiLanguage->translate($data, "impressum", "translate") ?></small></b>
             </div>
         </section>
     </div>
 
     <?php
     foreach ($db->get_results($query) as $row) {
-        $img = Image::getPostImage($row['id'], "dnt_posts");
+        $img = $image->getPostImage($row['id'], "dnt_posts");
         $url = $articleView->detailUrl($row['cat_name_url'], $row['id'], $row['name_url']);
         $detailUrl = WWW_PATH . "" . $row['cat_name_url'] . "/detail/" . $row['id'] . "/project";
 
@@ -156,4 +161,4 @@ include "dnt-view/layouts/" . Vendor::getLayout() . "/tpl_functions.php";
         <?php
     }
     ?>
-    <?php include "dnt-view/layouts/" . Vendor::getLayout() . "/bottom.php"; ?>
+    <?php include "dnt-view/layouts/" . $vendor->getLayout() . "/bottom.php"; ?>

@@ -4,16 +4,19 @@ use DntLibrary\Base\ArticleView;
 use DntLibrary\Base\Image;
 use DntLibrary\Base\MultyLanguage;
 use DntLibrary\Base\Vendor;
+
+$multiLanguage = new MultyLanguage;
+$vendor = new Vendor;
 ?>
 <div id='main'>
-    <?php include "dnt-view/layouts/" . Vendor::getLayout() . "/top.php"; ?>
+    <?php include "dnt-view/layouts/" . $vendor->getLayout() . "/top.php"; ?>
     <section id="right">
         <div class="wrapper">
             <div class="wrap">
                 <div class="grids">
 
                     <div class="grid-12">
-                        <h1 class="slogan"><?php echo MultyLanguage::translate($data, "homepage_text", "translate") ?> </h1>
+                        <h1 class="slogan"><?php echo $multiLanguage->translate($data, "homepage_text", "translate") ?> </h1>
                     </div>
 
                     <?php if ($data['article']['img']) { ?>
@@ -61,7 +64,7 @@ use DntLibrary\Base\Vendor;
                             <?php echo $data['article']['content']; ?>
                         </div>
                         <div class="grid-12">
-                            <h2><?php echo MultyLanguage::translate($data, "progress_text", "translate") ?></h2>
+                            <h2><?php echo $multiLanguage->translate($data, "progress_text", "translate") ?></h2>
                         </div>
                         <?php
                         $posts = new ArticleView;
@@ -94,7 +97,7 @@ use DntLibrary\Base\Vendor;
         <!-- END WRAPPER   -->
         <!-- ICONS  -->
         <div id="top">
-            <b><small> <?php echo MultyLanguage::translate($data, "data_protection", "translate") ?> | <?php echo date("Y"); ?> | <?php echo MultyLanguage::translate($data, "impressum", "translate") ?></small></b>
+            <b><small> <?php echo $multiLanguage->translate($data, "data_protection", "translate") ?> | <?php echo date("Y"); ?> | <?php echo $multiLanguage->translate($data, "impressum", "translate") ?></small></b>
         </div>
     </section>
 </div>
