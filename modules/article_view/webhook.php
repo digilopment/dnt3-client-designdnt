@@ -11,15 +11,17 @@ class articleViewModulController
     public function run()
     {
         $article = new ArticleView;
+        $sdminContent = new AdminContent;
+        $settings = new Settings;
         $rest = new Rest;
 
         $id = $rest->webhook(3);
 
-        $show = AdminContent::getPostParam("show", $id);
+        $show = $adminContent->getPostParam("show", $id);
         if ($show > 0 && $rest->webhook(2) && is_numeric($rest->webhook(3)) && $rest->webhook(4)) {
             $custom_data = array(
                 "post_id" => $id,
-                "title" => $article->getPostParam("name", $id) . " | " . Settings::get("title"),
+                "title" => $article->getPostParam("name", $id) . " | " . $settings->get("title"),
                 "meta" => array(
                     '<meta name="keywords" content="' . $article->getPostParam("tags", $id) . '" />',
                     '<meta name="description" content="' . $article->getPostParam("name", $id) . '" />',
@@ -37,4 +39,5 @@ class articleViewModulController
 
 }
 
-articleViewModulController::run();
+$modul = new articleViewModulController();
+$modul->run();

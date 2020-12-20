@@ -14,6 +14,7 @@ class articleViewModulController
 		$this->adminContent = new AdminContent();
 		$this->vendor = new Vendor();
 		$this->frontend = new Frontend();
+		$this->settings = new Settings();
 	}
 	
     public function run()
@@ -27,7 +28,7 @@ class articleViewModulController
         if ($show > 0 && $rest->webhook(2) && is_numeric($rest->webhook(3)) && $rest->webhook(4)) {
             $custom_data = array(
                 "post_id" => $id,
-                "title" => $article->getPostParam("name", $id) . " | " . Settings::get("title"),
+                "title" => $article->getPostParam("name", $id) . " | " . $this->settings->get("title"),
                 "meta" => array(
                     '<meta name="keywords" content="' . $article->getPostParam("tags", $id) . '" />',
                     '<meta name="description" content="' . $article->getPostParam("name", $id) . '" />',
